@@ -1,0 +1,109 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.nav-container{
+    width: 10vw;
+    height: 5vh;
+}
+
+body{
+    background-color: #FFCCCC;
+}
+
+.footer{
+    background-color: #FFCCCC;
+}
+
+.logo-container{
+    
+}
+.logo{
+    height: 100%;
+}
+.nav-wrap{
+    display: flex;
+    height: 11vh;
+    justify-content: center;
+    align-items: baseline;
+}
+
+
+
+
+.opc{
+    background-color: #FF1A8C;
+    color: #cccccc;
+    font-size: 25px;
+}
+nav{
+    background-color: #FF6666;
+}
+.btn-limpiar{
+    background-color: #FF1A8C;
+    color: #cccccc;
+    font-size: medium;
+}
+.btn-menu{
+    background-color: #FF6666;
+    height: 5vh;
+
+}
+
+.img-menu{
+    height: 100%;
+}
+
+.wrap-toggle{
+    margin-left: 150px;
+    padding: 3rem;
+}
+
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+    background-color: #FF1A8C;
+    border-radius: 20px ;
+    cursor: pointer;
+
+}
+
+.switch::after{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: white;
+    left: 5px;
+    top: 5px;
+    transition: all 0.4s;
+}
+
+input[type='checkbox']:checked + .switch::after{
+    transform: translateX(40px);
+    background-color: #00CCFF;
+}
+
+input[type='checkbox']:checked + .switch{
+    background-color: #66FF66;
+}
+
+.offscreen{
+    position:absolute;
+    left: -99999999999px;
+}
+.cambio-color.active {
+    background-color: #66FF66;
+    color: black;
+}
+.cambio-color-nav.active-nav{
+    background-color: #66FF66;
+}
+.bodyModal{
+    display: flex;
+    align-items: center;
+}
