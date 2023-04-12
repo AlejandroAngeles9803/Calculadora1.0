@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    
+    <!-- Importamos Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <nav class="navbar bg-body-tertiary   cambio-color-nav nav-wrap">
+      <div class="container-fluid">
+        <img class=" logo" src="./images/icons8-calculadora-64.png" alt="">
+        <button class="btn btn-menu cambio-color" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+          <img class="img-menu" src="./images/icons8-menú-redondeado-90.png" alt="">
+        </button>
+      </div>  
+    </nav>
+
+    <title>Calculadora Básica</title>
+
+    <div class="container mt-5">
+      <h1 class="mb-4">Calculadora Básica</h1>
+      <!-- Creamos una pantalla para la calculadora -->
+      <input
+        type="text"
+        id="pantalla"
+        class="form-control mb-4"
+        value="0"
+        disabled
+      />
+      <!-- Creamos una tabla para los botones -->
+      <table class="table table-bordered">
+        <tr>
+          <!-- Agregamos un botón para reiniciar la calculadora -->
+          
+          <td><button class="btn opc btn-block cambio-color" data-valor="C">C</button></td>
+          <td></td>
+          <td></td>
+          <td><button class="btn opc btn-block cambio-color" data-valor="/">/</button></td>
+        </tr>
+        <tr>
+          <!-- Agregamos botones para los números -->
+          <td><button class="btn opc btn-block cambio-color" data-valor="7">7</button></td>
+          <td><button class="btn opc btn-block cambio-color" data-valor="8">8</button></td>
+          <td><button class="btn opc btn-block cambio-color" data-valor="9">9</button></td>
+          <td><button class="btn opc btn-block cambio-color" data-valor="*">*</button></td>
+        </tr>
+        <tr>
+          <!-- Agregamos botones para los números -->
+          <td><button class="btn opc btn-block cambio-color" data-valor="4">4</button></td>
+          <td><button class="btn opc btn-block cambio-color" data-valor="5">5</button></td>
+          <td><button class="btn opc btn-block cambio-color"  data-valor="6">6</button></td>
+          <td><button class="btn opc btn-block cambio-color" data-valor="-">-</button></td>
+        </tr>
+        <tr>
+          <!-- Agregamos botones para los números -->
+          <td><button class="btn opc btn-block cambio-color" data-valor="1">1</button></td>
+          <td><button class="btn opc btn-block cambio-color" data-valor="2">2</button></td>
+          <td><button class="btn opc btn-block cambio-color" data-valor="3">3</button></td>
+          <td><button class="btn opc btn-block cambio-color" data-valor="+">+</button></td>
+        </tr>
+        <tr>
+            <!-- Agregamos un botón para el número cero -->
+            <td colspan="2"><button class="btn opc btn-block cambio-color" data-valor="0">0</button></td>
+            <td><button class="btn opc btn-block cambio-color" data-valor=".">.</button></td>
+            <td><button class="btn opc btn-block cambio-color" id="igual" data-valor="=">=</button></td>
+          </tr>
+        </table>
+      </div>
+      <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body bodyModal">
+                <div>
+                    <h3>Modo Daltonico</h3>
+                </div>
+                <div class="wrap-toggle">
+                    <input type="checkbox" id="cambio-color-checkbox" class="offscreen" onchange="cambiarColorBotones()">
+                    <label for="cambio-color-checkbox" class="switch"></label>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+    <script>
+        
+        function cambiarColorBotones() {
+        var botones = document.querySelectorAll(".cambio-color")
+        var checkbox = document.getElementById("cambio-color-checkbox");
+        var input = document.querySelectorAll(".cambio-color-nav");
+        var body = document.body;
+
+
+        if (checkbox.checked) {
+            for (var i = 0; i < botones.length; i++) {
+                botones[i].classList.add("active");
+
+            }
+            input[0].classList.add("active-nav");
+            body.style.backgroundColor = "#00CCFF";
+
+        } else {
+            for (var i = 0; i < botones.length; i++) {
+                botones[i].classList.remove("active");
+            }
+            input[0].classList.remove("active-nav");
+            body.style.backgroundColor = "#FFCCCC";
+        }
+
+
+    }
+    </script>
+      <!-- Importamos jQuery y Bootstrap JS -->
+      <script
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNS4Qzo"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"
+      ></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+        integrity="sha384-EVv1rLl1/oFfsyUBcVRP8oYzR0nt+L5Bl5ZfzwG8xpS5swS4NQjep6yHp+x3zOf4"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+      <!-- Importamos nuestro archivo de JavaScript -->
+      <script src="./js/calculadora.js"></script>
+    </body>
+  </html>
+  
